@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline'; img-src 'self' data:"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; img-src 'self' data:"
+    />
+    <title>ViMeR: A free software application for interval-based video-mediated recall</title>
+
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <!--<script src="./bower_components/bootstrap/dist/js/bootstrap.bundle.min.js"></script>-->
+    <link rel="stylesheet" href="css/vmr.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row align-items-start">
+        <div class="col">
+          <img src="assets/all_uni_logo.png" class="float-end" alt="University Logo" id="logo" />
+        </div>
+      </div>
+
+      <!-- ## SETUP PANE -->
+      <div class="row justify-content-md-center" id="setupPane">
+        <div class="col-3">
+          <div class="mb-3">
+            <p>Video preview</p>
+            <video id="exampleVideo" width="80%" controls />
+          </div>
+        </div>
+        <div class="col-5">
+          <form id="setupForm" class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="participantCode" class="form-label">Participant code</label>
+              <input type="text" class="form-control" id="participantCode" aria-describedby="participantCode" pattern="[a-z,A-Z,0-9,_]{1,16}" required>
+              <div id="participantCodeHelp" class="form-text">Please enter a participant identifier.</div>
+            </div>
+            <div class="mb-3">
+              <label for="videoFileSelect" class="form-label">Video file</label>
+              <input type="file" class="form-control" id="videoFileSelect" accept="video/mp4" required>
+            </div>
+            <div class="mb-3">
+              <label for="configFileSelect" class="form-label">Settings file</label>
+              <input type="file" class="form-control" id="configFileSelect" accept=".yml" required>
+            </div>
+            <label for="outputFolderSelect" class="form-label">Output folder</label>
+            <div class="input-group mb-3" id="outputFolderSelectInputGroup">
+              <span class="input-group-text">Select Folder</span>
+              <input type="text" class="form-control" id="outputFolderSelect" required>
+            </div>
+            <button type="submit" class="btn btn-primary float-end" id="setupNextBtn">Next</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- ## INSTRUCTION PANE -->
+      <div class="row justify-content-md-center d-none" id="instructionPane">
+        <div class="col-8">
+          <div id="instructionText">
+          </div>
+          <button type="button" class="btn btn-primary float-end" id="instructionNextBtn">Next</button>
+        </div>
+      </div>
+
+      <!-- ## VIDEO PANE -->
+      <div class="row d-none" id="videoPane">
+        <div class="col-9 gy-3" id="video-container">
+          <video id="video" width="100%"></video>
+          <button type="button" class="btn btn-primary d-none" id="replayVideo">Replay video fragment</button>
+        </div>
+        <div class="col-3 gy-3" id="survey-container">
+          <button type="button" class="btn btn-primary" id="playVideo">Play</button>
+          <form class="d-none needs-validation" id="questionsForm" novalidate>
+            <div id="steps-container">
+            </div>
+            <div id="q-box__buttons d-grid gap-2 d-md-block">
+              <button id="prev-btn" type="button" class="btn btn-primary disabled">Previous</button>
+              <button id="next-btn" type="button" class="btn btn-primary">Next</button>
+              <button id="submit-btn" type="submit" class="btn btn-primary disabled">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- ## OUTRO PANE -->
+      <div class="row justify-content-md-center d-none" id="outroPane">
+        <div class="col-8">
+          <div id="outroText">
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </body>
+  <script src="./renderer.js"></script>
+</html>
