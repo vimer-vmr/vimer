@@ -1,0 +1,2 @@
+# ViMeR
+ViMeR is a free software application for interval-based video-mediated recall research. The software will show a video clip segment by segment and participants have to answer a survey after every segment. The survey is completely defined by the researcher. Take a look at the [quick start](https://vimer-vmr.github.io/vimer/quick_start/) page to see how it works. A [reference](https://vimer-vmr.github.io/vimer/reference/) manual is available to get a detailed list of configuration options.
