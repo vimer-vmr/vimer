@@ -1,0 +1,84 @@
+general:
+  timing:
+    type: relative
+    interval: 2
+    segments: 5
+  labels:
+    previous: Previous
+    next: Next
+    submit: Submit
+    play: Play
+    replay: Replay
+  ui:
+    showReplayButton: true
+    showPreviousButton: true
+    videoWidth: 50
+    image: assets/uni1.png
+
+instructions:
+  title: Instructions
+  text: A short introduction video about big buck bunny will be shown. Please pay attention to everything you see. The movie will be interrupted and questions about the most recent movie fragment will be asked.
+
+outro:
+  title: Thanks for participating
+  text: Please go to the experiment instructors. They will guide you to the next part of this experiment.
+
+survey:
+- page: Scene
+  description: In the previous movie segment ...
+  questions:
+  - question: I saw an animal that looks most like a
+    label: scene_animal
+    type: radio
+    options: 
+      - Bird
+      - Bunny
+      - Tiger
+      - None
+  - question: I think they tried to show...
+    label: scene_situation
+    type: text
+- page: Feelings
+  description: In the previous movie segment ...
+  questions:
+  - question: I felt ... happy.
+    label: feelings_happy
+    type: slider
+    options:
+      show-value: false
+      min: 0
+      max: 100
+      labels:
+        left: not at all
+        center: ""
+        right: very
+  - question: I felt ... sad
+    label: feelings_sad
+    type: likert
+    options:
+      show-value: true
+      values:
+      - [ -3, not at all]
+      - [ -2, ]
+      - [ -1, ]
+      - [ 0, ]
+      - [ 1, ]
+      - [ 2, ]
+      - [ 3, very]
+- page: Feelings (2)
+  description: In the previous movie segment ...
+  questions:
+  - question: I felt.
+    label: feelings_grid
+    type: grid
+    options:
+      size: 7
+      labels:
+        left-top: Stress
+        center-top: High arousal
+        right-top: Excitement
+        right-center: Pleasant feelings
+        center-bottom: Sleepiness
+        left-bottom: Depression
+        right-bottom: Relaxation
+        left-center: Unpleasant feelings
