@@ -20,6 +20,7 @@
 .range-custom {
     left: 6.5%;
     width: 87%; /* Full-width */
+    height: 40px; /* To increase hight of click zone */
     position: relative;
 }
 
