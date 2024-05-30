@@ -1,7 +1,7 @@
 {
   "name": "vimer",
   "productName": "ViMeR",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "ViMeR: A Video-Mediated Recall Application",
   "main": "main.js",
   "scripts": {
