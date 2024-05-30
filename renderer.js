@@ -493,10 +493,12 @@ function startSurvey() {
     step[current_step].classList.add('d-block');
     prevBtn.classList.add('disabled');
     if (stepCount > 0) {
-        submitBtn.classList.add('disabled');
+        submitBtn.classList.add('invisible');
+        submitBtn.classList.remove('visible');
         nextBtn.classList.remove('disabled');
     } else {
-        submitBtn.classList.remove('disabled');
+        submitBtn.classList.add('visible');
+        submitBtn.classList.remove('invisible');
         nextBtn.classList.add('disabled');
     }
 
@@ -539,7 +541,8 @@ nextBtn.addEventListener('click', () => {
         step[previous_step].classList.remove('d-block');
         step[previous_step].classList.add('d-none');
         if (current_step == stepCount) {
-            submitBtn.classList.remove('disabled');
+            submitBtn.classList.add('visible');
+            submitBtn.classList.remove('invisible');
             nextBtn.classList.add('disabled');
         }
     }
@@ -555,7 +558,8 @@ prevBtn.addEventListener('click', () => {
         step[previous_step].classList.remove('d-block');
         step[previous_step].classList.add('d-none');
         if (current_step < stepCount) {
-            submitBtn.classList.add('disabled');
+            submitBtn.classList.add('invisible');
+            submitBtn.classList.remove('visible');
             nextBtn.classList.remove('disabled');
             prevBtn.classList.remove('disabled');
         }
@@ -578,7 +582,8 @@ questionsForm.addEventListener('submit', (event) => {
         step[stepCount].classList.remove('d-block');
         step[stepCount].classList.add('d-none');
         prevBtn.classList.add('disabled');
-        submitBtn.classList.add('disabled');
+        submitBtn.classList.add('invisible');
+        submitBtn.classList.remove('visible');
 
         writeCsvData();
         finishSurvey();
